@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import 'tachyons';
 //imported components
+import NavigationControls from './NavigationControls';
 import Month from './Month';
 
 
@@ -15,10 +16,12 @@ const Wrapper = styled.div.attrs({
 
 class Calendar extends Component{
 
+
     
     render(){
         return(
             <Wrapper>
+                <NavigationControls></NavigationControls>
                 <Month date={this.props.date} />
             </Wrapper>
         );
