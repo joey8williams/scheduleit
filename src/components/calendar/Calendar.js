@@ -1,26 +1,29 @@
 import React, {Component} from 'react';
+//styling imports
 import styled from 'styled-components';
 import 'tachyons';
+//imported components
+import Month from './Month';
+
 
 
 const Wrapper = styled.div.attrs({
     className:'pa1'
-})``;
+})`
+    background-color:inherit
+`;
 
 class Calendar extends Component{
-    constructor(props){
-        super(props);
-        this.names = ["Jim", "Jane", "Tina","Trina"];
-    }
 
     
     render(){
         return(
             <Wrapper>
-                {this.names.map(name => <p>{name}, I'm Home!</p>)}
+                <Month date={this.props.date} />
             </Wrapper>
         );
     }
+    
     
     
 }

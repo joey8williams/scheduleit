@@ -13,10 +13,6 @@ const Wrapper = styled.div.attrs({
 
 
 class Header extends Component{
-    constructor(props){
-        super(props);
-        
-    }
     render(){
         return(
             <Wrapper>
