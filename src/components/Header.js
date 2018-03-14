@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import 'tachyons';
 
 const Wrapper = styled.div.attrs({
-    className:'shadow-4 pa1 bg-dark-red'
+    className:'shadow-4 pa1 bg-dark-red br2'
 })`
     top:0px;
     left:0px;
@@ -16,7 +16,7 @@ class Header extends Component{
     render(){
         return(
             <Wrapper>
-                <h3>Welcome to the header</h3>
+                <h1 className="f4 georgia">Welcome to the header</h1>
             </Wrapper>
             );
     }

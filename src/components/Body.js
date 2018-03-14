@@ -14,16 +14,10 @@ const Wrapper = styled.div.attrs({
 `;
 
 class Body extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            date: new Date()
-        }
-    }
     render(){
         return (
             <Wrapper>
-             <Calendar date={this.state.date}></Calendar>   
+             <Calendar />
             </Wrapper>    
         );
     }

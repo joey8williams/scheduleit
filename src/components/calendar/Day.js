@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div.attrs({
-    className:'fl pa1 ma1 tc ba bg-moon-gray bs1 b--dark-gray dark-gray'
+    className:'fl pa1 ma1 tc ba bg-moon-gray bs1 dark-gray br2'
 })`
-    width:100px;
-    height:75px;
+    height:50px;
+    max-width:60px;
 `;
 
 

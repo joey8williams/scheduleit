@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import parse from 'date-fns/parse';
 import addDays from 'date-fns/add_days';
 import endOfWeek from 'date-fns/end_of_week';
+import getMonth from 'date-fns/get_month';
+import endOfMonth from 'date-fns/end_of_month';
 import differenceInCalendarDays from 'date-fns/difference_in_calendar_days';
 import range from 'lodash/range';
 
@@ -22,8 +24,12 @@ class Week extends Component{
     }
     renderDaysInWeek(){
         const start = parse(this.props.date);
-        const end = endOfWeek(this.props.date);
-        const dayNums = range(differenceInCalendarDays(end,start));
+        let end = endOfWeek(this.props.date);
+        if(getMonth(start) !== getMonth(end)){
+            end = endOfMonth(start);
+        }
+        
+        const dayNums = range(differenceInCalendarDays(addDays(end,1),start));
         
         return dayNums.map(num => 
             <Day date={addDays(start,num)}></Day>

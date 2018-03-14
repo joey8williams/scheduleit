@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Body from './components/Body';
 
 const Wrapper = styled.div.attrs({
+  className:"bg-mid-gray"
 })`
 `;
 
