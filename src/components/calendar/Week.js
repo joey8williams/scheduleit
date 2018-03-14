@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import parse from 'date-fns/parse';
+import getDay from 'date-fns/get_day';
+import getDate from 'date-fns/get_date';
 import addDays from 'date-fns/add_days';
 import endOfWeek from 'date-fns/end_of_week';
 import getMonth from 'date-fns/get_month';
@@ -28,12 +30,35 @@ class Week extends Component{
         if(getMonth(start) !== getMonth(end)){
             end = endOfMonth(start);
         }
-        
         const dayNums = range(differenceInCalendarDays(addDays(end,1),start));
+        let weekDayIndexes = dayNums.map(num => {
+            const currDate = addDays(start,num);
+            return {
+                date:currDate,
+                weekIndex:getDay(currDate)
+            };
+        });
+        let weekIndex = range(7).map(index => {
+            const instance = weekDayIndexes.find(item => item.weekIndex === index);
+            if(instance === undefined) {
+                return{
+                    date:new Date(),
+                    weekIndex: index,
+                    inMonth:false
+                    
+                };
+            }
+            const inMonth = instance.weekIndex === index;
+            return {
+                date: instance.date,
+                weekIndex:index,
+                inMonth: instance.weekIndex === index
+            };
+        });
         
-        return dayNums.map(num => 
-            <Day date={addDays(start,num)}></Day>
-        );
+        return weekIndex.map(item => {
+            return <Day date={item.date} disabled={!item.inMonth}></Day>
+        });
     }
 }
 
