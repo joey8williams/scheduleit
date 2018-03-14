@@ -24,7 +24,7 @@ class NavigationControls extends Component{
                 <div className="fl w-10 mv3">
                 <FontAwesome name="chevron-circle-left"
                              size="2x"
-                             className="moon-gray pointer"
+                             className="moon-gray pointer fr"
                              onClick={this.backward}/>
                 </div>
                 <div className="fl w-80 tc">

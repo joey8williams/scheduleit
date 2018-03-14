@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import 'tachyons';
 
 import Calendar from './calendar/Calendar'
+import DateExpansion from './DateExpansion';
 //import img from '../theme/background.webp';
 
 
@@ -18,6 +19,7 @@ class Body extends Component{
         return (
             <Wrapper>
              <Calendar />
+             <DateExpansion />
             </Wrapper>    
         );
     }

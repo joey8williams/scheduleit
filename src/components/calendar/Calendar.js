@@ -35,6 +35,7 @@ class Calendar extends Component{
                 <NavigationControls date={this.state.date} moveForward={this.moveForward} 
                                                            moveBackward={this.moveBackward}/>
                 <Month date={this.state.date} />
+                
             </Wrapper>
         );
     }
