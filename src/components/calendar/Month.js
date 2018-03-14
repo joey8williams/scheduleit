@@ -37,7 +37,7 @@ class Month extends Component{
         });
         
         return [...weeklyStartDates].map(date => 
-            <Week date={date}></Week>
+            <Week date={date} swapDate={this.props.swapDate}></Week>
         );
     }
 }

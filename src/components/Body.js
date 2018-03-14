@@ -15,14 +15,28 @@ const Wrapper = styled.div.attrs({
 `;
 
 class Body extends Component{
+    constructor(props){
+        super(props);
+        
+        this.state = {
+            selected:new Date()
+        }
+        
+        this.swapSelectedDate = this.swapSelectedDate.bind(this);
+    }
     render(){
         return (
             <Wrapper>
-             <Calendar />
-             <DateExpansion />
+             <Calendar swapDate={this.swapSelectedDate}/>
+             <DateExpansion selected={this.state.selected}/>
             </Wrapper>    
         );
     }
+    swapSelectedDate(date){
+        this.setState(({
+            selected:date
+        }));
+    } 
 }
 
 export default Body;

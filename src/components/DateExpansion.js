@@ -8,7 +8,9 @@ const Wrapper = styled.div.attrs({
 class DateExpansion extends Component{
     render(){
         return (
-            <Wrapper></Wrapper>    
+            <Wrapper>
+            <h4 className='f6 sf mid-gray mv0'>{this.props.selected.toLocaleDateString()}</h4>
+            </Wrapper>    
         );
     }
 }
