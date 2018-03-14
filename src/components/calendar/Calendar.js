@@ -29,9 +29,6 @@ class Calendar extends Component{
         this.moveForward = this.moveForward.bind(this);
     }
 
-
-
-    
     render(){
         return(
             <Wrapper>
@@ -54,12 +51,6 @@ class Calendar extends Component{
         }));       
         
     }
-    
-    
-    
-    
-    
-    
     
 }
 
