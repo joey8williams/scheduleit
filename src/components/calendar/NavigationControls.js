@@ -10,9 +10,6 @@ const Wrapper = styled.div.attrs({
     background-color:inherit;
 `;
 
-const LeftNav = styled.span.attrs({
-    className:"chevron-circle-left"
-})``;
 
 class NavigationControls extends Component{
     constructor(props){
