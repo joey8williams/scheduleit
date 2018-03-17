@@ -16,12 +16,19 @@ class DateExpansion extends Component{
     }
     render(){
         const Wrapper = styled.div.attrs({
-            className: `pa1 br2 shadow-4 bg-light-red fixed bottom-0 left-0 w-100 ${this.isExpanded ? 'slideInUp' : 'slideOutDown'}`
+            className: `pa1 br2 shadow-4 bg-light-red fixed bottom-0 left-0 w-100 ${this.state.isExpanded ? 'slideOutDown' : 'slideInUp'}`
         })`
-            height:${this.isExpanded ? "50vh" : "10vh"};
+            height:${this.state.isExpanded ? "50vh" : "10vh"};
+            
+            &[data-expanded="true"]{
+                animation-name:slideInUp;
+            }
+            &[data-expanded="false"]{
+                animation-name:slideInDown;
+            }
         `;
         return (
-            <div onClick={this.toggleExpansion} className='pa1 br2 shadow-4 bg-light-red fixed bottom-0 left-0 w-100 {this.isExpanded ? "slideInUp" : "slideOutDown"}'>
+            <Wrapper onClick={this.toggleExpansion} data-expanded={this.state.isExpanded}>
                 <div id='date-exp_heading-date' className="fl w-30">
                     <h4 className='f3 sf mid-gray mv0'>{this.props.selected.toLocaleDateString()}</h4>
                 </div>
@@ -31,7 +38,7 @@ class DateExpansion extends Component{
                                  className="mid-gray mv0"/>
                                 
                 </div>
-            </div>    
+            </Wrapper>    
         );
     }
     
