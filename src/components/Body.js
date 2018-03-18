@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import 'tachyons';
 
 import Calendar from './calendar/Calendar'
-import DateExpansion from './DateExpansion';
-//import img from '../theme/background.webp';
+import DateExpansion from './date_expansion/DateExpansion';
 
 
 const Wrapper = styled.div.attrs({

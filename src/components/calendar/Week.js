@@ -54,7 +54,8 @@ class Week extends Component{
         });
         
         return weekIndex.map(item => {
-            return <Day date={item.date} 
+            return <Day key={weekIndex.indexOf(item)}
+                        date={item.date} 
                         disabled={!item.inMonth}
                         swapDate={this.props.swapDate}></Day>
         });
