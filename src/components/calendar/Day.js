@@ -16,15 +16,12 @@ class Day extends Component{
     }
     
     selectDay(){
-        console.log('selecting');
-        
         this.props.swapDate(this.props.date);
-        
     }
     
     content(value){
         const Wrapper = styled.div.attrs({
-            className:`${this.props.disabled ? 'bg-mid-gray' : 'bg-moon-gray'} fl pa1 ma1 tc ba  bs1 dark-gray br2 pointer`
+            className:`${this.props.disabled ? 'bg-mid-gray' : this.props.hasEvent ? 'bg-light-red' : 'bg-moon-gray'} fl pa1 ma1 tc ba  bs1 dark-gray br2 pointer`
         })`
             width:14.28571428%;
             height:50px;

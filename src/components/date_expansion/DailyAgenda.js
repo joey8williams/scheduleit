@@ -26,7 +26,7 @@ class DailyAgenda extends Component{
           <h4 className='f4 mv3'>Daily Schedule: John Doe</h4>
           <div className='fl w-50' id='startBlock'>
             <div className='fl w-100'>
-              <p className='mv0'>{new Date().toLocaleTimeString()}</p>
+              <p className='mv0 f5'>{new Date().toLocaleTimeString()}</p>
             </div>
             <div className='fl w-100'>
               <p className='mv0 f6'>start</p>
@@ -34,7 +34,7 @@ class DailyAgenda extends Component{
           </div>
           <div className='fl w-50' id='endBlock'>
             <div className='fl w-100'>
-              <p className='mv0'>{new Date().toLocaleTimeString()}</p>
+              <p className='mv0 f5'>{new Date().toLocaleTimeString()}</p>
             </div>
             <div className='fl w-100'>
               <p className='mv0 f6'>end</p>
