@@ -14,7 +14,6 @@ import Month from './Month';
 const Wrapper = styled.div.attrs({
     className:'pa1'
 })`
-    background-color:inherit
 `;
 
 class Calendar extends Component{
