@@ -14,7 +14,6 @@ class DailyAgenda extends Component{
       className:`${this.props.className} mid-gray ph2 mv3 f5 sf`
     })`
       height:55vh
-      overflow-y:scroll;
       
 
     `;
