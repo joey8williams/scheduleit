@@ -5,6 +5,7 @@ import format from 'date-fns/format';
 
 import KeyValueBlock from '../../theme/elements/KeyValueBlock';
 import RouteMap from '../RouteMap';
+import ExpansionActions from './ExpansionActions';
 import PaymentTracker from '../PaymentTracker';
 
 
@@ -56,7 +57,11 @@ class DisplayAgenda extends Component{
                 </div>
                <RouteMap className='fl w-100 mv2 ba b--light-red bw1' /> 
                
-               <PaymentTracker className='fl w-100 mv3' />
+               {dummyDate <= new Date() 
+                   ? <ExpansionActions className='fl w-100 mv3' styledHeight="10vh" />
+                   : <PaymentTracker className='fl w-100 mv3'   styledHeight="10vh" /> 
+               }
+               
             </Wrapper>    
         );
         

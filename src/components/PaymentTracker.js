@@ -7,7 +7,7 @@ class PaymentTracker extends Component{
         const Wrapper = styled.div.attrs({
             className:`${this.props.className} bg-green br4 light-red fw7 f3`
         })`
-            min-height:10vh;
+            min-height:${this.props.styledHeight};
         `;
         
         return (
