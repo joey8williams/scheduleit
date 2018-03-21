@@ -17,10 +17,10 @@ class HeaderMenu extends Component{
     `;
     return (
       <Wrapper onClick={this.toggleExpansion}>
-        <div id='date-exp_heading-date' className="fl w-30" onClick={this.toggleExpansion}>
+        <div id='date-exp_heading-date' className="fl w-30" >
             <h4 className='f3  mid-gray mv0'>{this.props.selectedDate.toLocaleDateString()}</h4>
         </div>
-        <div id='date-exp_slide-toggle' className="fl w-40 tc " onClick={this.toggleExpansion}>
+        <div id='date-exp_slide-toggle' className="fl w-40 tc " >
             <FontAwesome name={this.props.expanded ? 'angle-down' : 'angle-up'} 
                           size="2x"
                           className="mid-gray mv0"/>

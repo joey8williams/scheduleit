@@ -15,8 +15,9 @@ class ExpansionActions extends Component{
         
         return (
             <Wrapper> 
-                    <Button primary heightSpec="10vh"><span>test</span></Button>
-            
+                    <Button primary heightSpec="10vh" className="fl w-third pa3">Reschedule</Button>
+                    <Button default heightSpec="10vh" className="fl w-third pa3">Action1</Button>
+                    <Button primary heightSpec="10vh" className="fl w-third pa3">Action2</Button>
             </Wrapper>
         );
     }

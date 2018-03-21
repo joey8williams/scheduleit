@@ -24,7 +24,7 @@ class DateExpansion extends Component{
 
         `;
         return (
-            <Wrapper onClick={this.toggleExpansion} data-expanded={this.state.isExpanded}>
+            <Wrapper data-expanded={this.state.isExpanded}>
                 <HeaderMenu className='fl w-100 pa2 br2' selectedDate = {this.props.selected} expanded ={this.state.isExpanded} onClick={this.toggleExpansion} />
                 <DailyAgenda className='fl w-100' hasData={true}></DailyAgenda>
             </Wrapper>    
