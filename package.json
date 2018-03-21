@@ -5,6 +5,7 @@
   "dependencies": {
     "animate.css": "^3.6.1",
     "date-fns": "^1.29.0",
+    "dotenv": "^5.0.1",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.5",
     "polished": "^1.9.2",
