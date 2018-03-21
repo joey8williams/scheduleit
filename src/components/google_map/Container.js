@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import GoogleApiComponent from './GoogleApiComponent';
 
-import {Map} from './Map';
+import Map from './Map';
 
 export class Container extends Component{
     render(){
@@ -19,7 +19,7 @@ export class Container extends Component{
        
         return(
             <div style={style}>
-                <Map google={this.props.google} />
+                <Map google={this.props.google}/>
             </div>
             
         );
@@ -29,5 +29,4 @@ export class Container extends Component{
 
 export default GoogleApiComponent({
     apiKey:'AIzaSyAw0632ZXRpbeTiNBgLWszvppvZBMxOkW4'
-
-})(Container)
+})(Container);

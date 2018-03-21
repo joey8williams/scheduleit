@@ -45,6 +45,7 @@ export const wrapper = (options) => (WrappedComponent) => {
           google: window.google
         })
       });
+      this.forceUpdate();
     }
 
     componentWillMount() {

@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 
-export class Map extends Component{
+class Map extends Component{
     componentDidMount(){
         this.loadMap();
+        this.forceUpdate();
     }
     componentDidUpdate(prevProps,prevState){
         if(prevProps.google !== this.props.google){
+            console.log('updating map props');
             this.loadMap();
         }
     }
@@ -32,13 +34,18 @@ export class Map extends Component{
                 center: center
             })
             this.map = new maps.Map(node, mapConfig);
+            console.log(this.map);
         }
     }
     render(){
+        const style={
+            width:'90vw',
+            height:'30vh'
+        }
         return (
-            <div ref='map'>
-                Loading map..
-            </div>
+            <div ref="map" style={style}>Loading map..</div>
         );
     }
 }
+
+export default Map;

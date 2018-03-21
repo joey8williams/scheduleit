@@ -17,8 +17,7 @@ class RouteMap extends Component{
         
         return (
             <Wrapper>
-                <Container />
-
+                <Container/>
             </Wrapper>
         );
     }
