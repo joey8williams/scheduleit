@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 
+import FontAwesome from 'react-fontawesome';
 import {Button} from '../../theme/elements/Button';
 
 class ExpansionActions extends Component{
@@ -17,7 +18,9 @@ class ExpansionActions extends Component{
             <Wrapper> 
                     <Button primary heightSpec="10vh" className="fl w-third pa3">Reschedule</Button>
                     <Button default heightSpec="10vh" className="fl w-third pa3">Action1</Button>
-                    <Button primary heightSpec="10vh" className="fl w-third pa3">Action2</Button>
+                    <Button primary heightSpec="10vh" className="fl w-third pa3">
+                        <FontAwesome name='map' />
+                    </Button>
             </Wrapper>
         );
     }
