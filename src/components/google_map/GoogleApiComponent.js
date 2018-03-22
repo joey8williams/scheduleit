@@ -1,5 +1,6 @@
-import React, { PropTypes as T } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
+//import T from 'prop-types'
 
 import cache from './ScriptCache'
 import GoogleApi from './GoogleApi'
@@ -24,9 +25,9 @@ export const wrapper = (options) => (WrappedComponent) => {
       const refs = this.refs;
       this.scriptCache.google.onLoad((err, tag) => {
         const maps = window.google.maps;
-        const props = Object.assign({}, this.props, {
-          loaded: this.state.loaded
-        });
+//        const props = Object.assign({}, this.props, {
+//          loaded: this.state.loaded
+//        });
 
         const mapRef = refs.map;
 

@@ -17,9 +17,10 @@ class ExpansionActions extends Component{
         return (
             <Wrapper> 
                     <Button primary heightSpec="10vh" className="fl w-third pa3">Reschedule</Button>
-                    <Button default heightSpec="10vh" className="fl w-third pa3">Action1</Button>
+                    <Button default heightSpec="10vh" className="fl w-third pa3">
+                       {this.props.companyName}<FontAwesome name='phone' /></Button>
                     <Button primary heightSpec="10vh" className="fl w-third pa3">
-                        <FontAwesome name='map' />
+                        <FontAwesome name='map' /> Route
                     </Button>
             </Wrapper>
         );

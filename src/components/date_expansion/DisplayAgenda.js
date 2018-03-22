@@ -58,7 +58,7 @@ class DisplayAgenda extends Component{
                <RouteMap className='fl w-100 mv2 ba b--light-red bw1' /> 
                
                {dummyDate <= new Date() 
-                   ? <ExpansionActions className='fl w-100 mv3' styledHeight="10vh" />
+                   ? <ExpansionActions className='fl w-100 mv3' styledHeight="10vh" companyName="SlowRider"/>
                    : <PaymentTracker className='fl w-100 mv3'   styledHeight="10vh" /> 
                }
                

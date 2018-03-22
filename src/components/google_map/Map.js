@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
 
 
 class Map extends Component{
@@ -40,7 +39,7 @@ class Map extends Component{
     render(){
         const style={
             width:'94vw',
-            height:'39vh'
+            height:'29vh'
         }
         return (
             <div ref="map" style={style}>Loading map..</div>

@@ -11,7 +11,7 @@ class DateExpansion extends Component{
         super(props);
         
         this.state = {
-            isExpanded:true,
+            isExpanded:false,
         };
         this.toggleExpansion = this.toggleExpansion.bind(this);
     }
