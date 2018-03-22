@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import getHours from 'date-fns/get_hours';
 import format from 'date-fns/format';
-
 import KeyValueBlock from '../../theme/elements/KeyValueBlock';
 import RouteMap from '../RouteMap';
 import ExpansionActions from './ExpansionActions';
 import PaymentTracker from '../PaymentTracker';
+import CustomerBio from '../customer_data/CustomerBio';
 
 
 class DisplayAgenda extends Component{
@@ -16,13 +16,7 @@ class DisplayAgenda extends Component{
             className:'tc fl w-100'
         })`
             
-            p.customer-name::before{
-                content:"Customer: ";
-            }
-            p.phone-number::before{
-                font-family:'FontAwesome';
-                content:"\f095";
-            }
+            
         `;
         const dummyDate = new Date();
         
@@ -42,19 +36,8 @@ class DisplayAgenda extends Component{
                                    keyName="Start" 
                                    valueName={`${getHours(dummyDate)}:${format(dummyDate,'mm')} ${format(dummyDate,'A')}`} />
                 </div>
-                <div className='fl w-100 tl' id='customerBio'>
-                    <div id='contact'>
-                        <div className='fl w-50'>
-                            <p className='mv0 f5 fw6 underline customer-name'>Jane Doe</p>
-                        </div>
-                        <div className='fr w-50'>
-                            <p className='mv0 f5 fw6 phone-number'> (582) 603-2447</p>
-                        </div>
-                    </div>
-                    <div className='fl w-100 tl'>
-                        <p className='mv0 f6 fw5'>Jane is an awful human being. She hates everything that has to do with happiness. Jane specializes in correcting children's mistakes and yelling at small animals.</p>
-                    </div>
-                </div>
+               <CustomerBio className='fl w-100 tl' />
+
                <RouteMap className='fl w-100 mv2 ba b--light-red bw1' /> 
                
                {dummyDate !== new Date() 

@@ -12,8 +12,10 @@ class DateExpansion extends Component{
         
         this.state = {
             isExpanded:false,
+            viewSchedule:false
         };
         this.toggleExpansion = this.toggleExpansion.bind(this);
+        this.toggleScheduleView = this.toggleScheduleView.bind(this);
     }
     render(){
         const Wrapper = styled.div.attrs({
@@ -25,8 +27,8 @@ class DateExpansion extends Component{
         `;
         return (
             <Wrapper data-expanded={this.state.isExpanded}>
-                <HeaderMenu className='fl w-100 pa2 br2' selectedDate = {this.props.selected} expanded ={this.state.isExpanded} onClick={this.toggleExpansion} />
-                <DailyAgenda className='fl w-100' hasData={true}></DailyAgenda>
+                <HeaderMenu className='fl w-100 pa2 br2' selectedDate = {this.props.selected} expanded ={this.state.isExpanded} onClick={this.toggleExpansion} toggleSchedule={this.toggleScheduleView}/>
+                <DailyAgenda className='fl w-100' hasData={true} canSchedule={this.state.viewSchedule}></DailyAgenda>
             </Wrapper>    
         );
     }
@@ -35,7 +37,12 @@ class DateExpansion extends Component{
         this.setState(prevState => ({
             isExpanded: !prevState.isExpanded
         }));
-        console.log('hello');
+    }
+    
+    toggleScheduleView(){
+        this.setState(prevState => ({
+            viewSchedule: !prevState.viewSchedule
+        }))
     }
 }
 

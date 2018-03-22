@@ -4,6 +4,7 @@ import range from 'lodash/range';
 
 import HourBlock from './HourBlock';
 import DisplayAgenda from './DisplayAgenda';
+import ScheduleAgenda from './ScheduleAgenda';
 
 
 
@@ -20,10 +21,9 @@ class DailyAgenda extends Component{
 
     return (
       <Wrapper>
-        {!this.props.hasData 
-          ? <h4>You have nothing scheduled today.</h4> 
-          : <DisplayAgenda />
-         
+        {this.props.hasData 
+          ? this.props.canSchedule ? <ScheduleAgenda /> : <DisplayAgenda />
+          : <h4>You have nothing scheduled today.</h4> 
         }
      
       </Wrapper>
