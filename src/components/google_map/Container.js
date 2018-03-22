@@ -7,11 +7,7 @@ import Map from './Map';
 export class Container extends Component{
     render(){
         console.log(this.props);
-        const Wrapper = styled.div.attrs({
-        })`
-            height:'30vh';
-            width:'100vw';
-        `;
+
         const style={
             width:'90vw',
             height:'30vh'
