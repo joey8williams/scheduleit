@@ -5,7 +5,7 @@ class CustomerBio extends Component{
     
     render(){
         const Wrapper = styled.div.attrs({
-            className:``
+            className:`mid-gray`
         })`
             p.customer-name::before{
                 font-family:'FontAwesome';

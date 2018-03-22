@@ -15,7 +15,7 @@ class Header extends Component{
     render(){
         return(
             <Wrapper>
-                <h1 className="f4 georgia mid-gray fr">Schedule</h1>
+                <h1 className="dib f3 fw6 mt1 mb1 link mid-gray fl mr2">Schedule</h1>
             </Wrapper>
             );
     }

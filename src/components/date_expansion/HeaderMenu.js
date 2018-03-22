@@ -12,7 +12,7 @@ class HeaderMenu extends Component{
   }
   render(){
     const Wrapper = styled.div.attrs({
-      className:`${this.props.className} bg-light-red`
+      className:`${this.props.className} bg-light-red shadow-5`
     })`
       height:10vh;
       

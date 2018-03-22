@@ -4,12 +4,12 @@ import styled from 'styled-components';
 class PaymentTracker extends Component{
     render(){
         const Wrapper = styled.div.attrs({
-            className:`${this.props.className} bg-moon-gray ba b--mid-gray bw2 br4 light-red fw7 f3`
+            className:`${this.props.className} bg-moon-gray ba b--mid-gray bw2 br4 mid-gray fw7 f3`
         })`
             height:${this.props.styledHeight};
         `;
         const Progress = styled.div.attrs({
-            className:'bg-green br3'
+            className:'bg-light-red br3'
         })`
             height:100%;
             width:${(this.props.amountPaid/this.props.amountOwed)*100}%
