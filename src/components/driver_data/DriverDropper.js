@@ -14,19 +14,22 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   margin: `0 0 ${grid}px 0`,
 
   // change background colour if dragging
-  background: isDragging ? 'lightgreen' : 'grey',
+  background: isDragging ? '#CCCCCC' : '#555555',
+  color:isDragging ? '#555555':'#CCCCCC',
+  border:'.125rem solid #CCCCCC',
 
   // styles we need to apply on draggables
   ...draggableStyle,
 });
 
 const getSelectionStyle = isDraggingOver => ({
-  background: isDraggingOver ? 'lightred' : 'darkgrey',
+  background: isDraggingOver ? '#FF725C' : '#555555',
   padding: grid,
   width: '100%',
+  border:'1px solid #555555'
 });
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? 'lightblue' : 'lightgrey',
+  background: isDraggingOver ? '#FF725C' : '#CCCCCC',
   padding: grid,
   width: '100%',
 });
@@ -40,12 +43,10 @@ class DriverDropper extends Component{
           }],
           items: this.props.drivers
         };
-        console.log(this.state.selectedItems);
         this.onDragEnd = this.onDragEnd.bind(this);
     }
     onDragEnd(result) {
         // dropped outside the list
-        console.log(result);
         
         if (!result.destination) {
           return;
@@ -54,23 +55,20 @@ class DriverDropper extends Component{
         const draggedItem = this.state.selectedItems.find(item => item.id === result.draggableId) 
                           || this.state.items.find(item => item.id === result.draggableId) ;
                           
-        console.log(draggedItem);
-        console.log(this.state.selectedItems);
         
         
         if(result.destination.droppableId === "droppable"){
           
           this.setState(prevState => ({
             items:prevState.items.filter(item => item.id !== draggedItem.id),
-            selectedItems:[draggedItem,...prevState.selectedItems]
+            selectedItems:prevState.selectedItems.some(item => item.id  === draggedItem.id) ? prevState.selectedItems : [draggedItem,...prevState.selectedItems]
           }));         
 
-          console.log(this.state.selectedItems);
         }
         else if(result.destination.droppableId === "droppable2"){
           this.setState(prevState => ({
             selectedItems:prevState.selectedItems.filter(item => item.id !== draggedItem.id),
-            items:[draggedItem,...prevState.items]
+            items:prevState.items.some(item => item.id === draggedItem.id) ? prevState.items : [draggedItem,...prevState.items]
           }));         
 
         }
