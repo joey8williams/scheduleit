@@ -58,7 +58,7 @@ class Week extends Component{
             return <Day key={weekIndex.indexOf(item)}
                         date={item.date} 
                         disabled={!item.inMonth}
-                        hasEvent={getDate(item.date) % 3 === 0}
+                        hasEvent={Math.random() > 0.75}
                         swapDate={this.props.swapDate}></Day>
         });
     }

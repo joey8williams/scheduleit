@@ -5,6 +5,7 @@ import FontAwesome from 'react-fontawesome'
 import CustomerBio from '../customer_data/CustomerBio';
 import DriverDropper from '../driver_data/DriverDropper';
 import Collapsible from '../../theme/elements/Collapsible';
+import KeyValueBlock from '../../theme/elements/KeyValueBlock';
 
 // fake data generator
 const getItems = count =>
@@ -20,6 +21,7 @@ class ScheduleAgenda extends Component{
         const Wrapper = styled.div.attrs({
             className:``
         })`
+            overflow-y:scroll;
             .height-ems{
                 height:10vh
             }
@@ -30,6 +32,12 @@ class ScheduleAgenda extends Component{
             .location-dropoff::after{
                 content:" Dropoff: ";
                 font-family:'georgia'
+            }
+            .text-money::before{
+                Content:"$";
+            }
+            .text-percent::after{
+                Content:"%";
             }
         `;
         
@@ -70,12 +78,28 @@ class ScheduleAgenda extends Component{
                 </div>
                 <div className='mv1 fl w-100 '>
                 <Collapsible title="Driver's Scheduled Hours" expanded={false} className='fl w-100 height-ems'>
-                    TODO: Figure out a solution for this
+                    <div className='fl w-third mh2'>
+                        <KeyValueBlock keyName='Start Time' valueName={new Date().toLocaleTimeString()} className='' />
+                    </div>
+                     <div className='fl w-third mh2'>
+                        <KeyValueBlock keyName='End Time' valueName={new Date().toLocaleTimeString()} className='' />
+                    </div>                   
                 </Collapsible>
                 </div>
                 <div className='mv1 fl w-100 height-ems'>
                 <Collapsible title="Driver's Commission" expanded={false} className=''>
-                    TODO: Figure out a solution for this
+                    <div className='fl w-third tc'>
+                        <p className='text-money f5 fw6'>300</p>
+                        <p className='f6 fw5'>Amount Paid</p>
+                    </div>
+                    <div className='fl w-third tc'>
+                        <p className='text-percent f5 fw6'>83.33</p>
+                        <p className='f6 fw5'>Multiplier</p>
+                    </div>
+                     <div className='fl w-third tc'>
+                        <p className='text-money f5 fw6'>250</p>
+                        <p className='f6 fw5'>Amount Due</p>
+                    </div>                   
                 </Collapsible>
                 </div>
             </Wrapper>    
