@@ -14,7 +14,7 @@ class DailyAgenda extends Component{
     const Wrapper = styled.div.attrs({
       className:`${this.props.className} mid-gray ph2 mv3 f5 sf`
     })`
-      height:55vh
+      height:77vh
       
 
     `;

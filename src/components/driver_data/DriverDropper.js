@@ -3,13 +3,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 
 // a little function to help us with reordering the result
-const reorder = (list, startIndex, endIndex) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
 
-  return result;
-};
 
 const grid = 8;
 
@@ -26,42 +20,102 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   ...draggableStyle,
 });
 
+const getSelectionStyle = isDraggingOver => ({
+  background: isDraggingOver ? 'lightred' : 'darkgrey',
+  padding: grid,
+  width: '100%',
+});
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'lightblue' : 'lightgrey',
   padding: grid,
   width: '100%',
 });
-
 class DriverDropper extends Component{
     constructor(props) {
         super(props);
         this.state = {
-          items: this.props.drivers,
+          selectedItems:[{
+            id:'x',
+            content:'Driver x'
+          }],
+          items: this.props.drivers
         };
+        console.log(this.state.selectedItems);
         this.onDragEnd = this.onDragEnd.bind(this);
     }
     onDragEnd(result) {
         // dropped outside the list
         console.log(result);
+        
         if (!result.destination) {
           return;
         }
         
-        const items = reorder(
-          this.state.items,
-          result.source.index,
-          result.destination.index
-        );
+        const draggedItem = this.state.selectedItems.find(item => item.id === result.draggableId) 
+                          || this.state.items.find(item => item.id === result.draggableId) ;
+                          
+        console.log(draggedItem);
+        console.log(this.state.selectedItems);
         
-        this.setState({
-          items,
-        });
+        
+        if(result.destination.droppableId === "droppable"){
+          
+          this.setState(prevState => ({
+            items:prevState.items.filter(item => item.id !== draggedItem.id),
+            selectedItems:[draggedItem,...prevState.selectedItems]
+          }));         
+
+          console.log(this.state.selectedItems);
+        }
+        else if(result.destination.droppableId === "droppable2"){
+          this.setState(prevState => ({
+            selectedItems:prevState.selectedItems.filter(item => item.id !== draggedItem.id),
+            items:[draggedItem,...prevState.items]
+          }));         
+
+        }
+        
+
+        
+
     }
     render(){
         
         return (
             <DragDropContext onDragEnd={this.onDragEnd}>
                 <Droppable droppableId="droppable">
+                  {(provided, snapshot) => (
+                    <div
+                      ref={provided.innerRef}
+                      style={getSelectionStyle(snapshot.isDraggingOver)}
+                    >
+                      {this.state.selectedItems.map((item, index) => (
+                        <Draggable key={item.id+'selected'} draggableId={item.id} index={index}>
+                          {(provided, snapshot) => (
+                            <div>
+                              <div
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                style={getItemStyle(
+                                  snapshot.isDragging,
+                                  provided.draggableProps.style
+                                )}
+                              >
+                                {item.content}
+                              </div>
+                              {provided.placeholder}
+                            </div>
+                          )}
+                        </Draggable>
+                      ))}
+                      {provided.placeholder}
+                    </div>
+                  )}
+                </Droppable>
+            
+            
+                <Droppable droppableId="droppable2">
                   {(provided, snapshot) => (
                     <div
                       ref={provided.innerRef}

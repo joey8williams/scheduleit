@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import parse from 'date-fns/parse';
 import getDay from 'date-fns/get_day';
-import getDate from 'date-fns/get_date';
 import addDays from 'date-fns/add_days';
 import endOfWeek from 'date-fns/end_of_week';
 import getMonth from 'date-fns/get_month';

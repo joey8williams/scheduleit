@@ -11,7 +11,7 @@ import KeyValueBlock from '../../theme/elements/KeyValueBlock';
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k}`,
-    content: `item ${k}`,
+    content: `Driver ${k}`,
   }));
 
 
@@ -21,7 +21,7 @@ class ScheduleAgenda extends Component{
         const Wrapper = styled.div.attrs({
             className:``
         })`
-            overflow-y:scroll;
+            //overflow-y:scroll;
             .height-ems{
                 height:10vh
             }
@@ -65,19 +65,17 @@ class ScheduleAgenda extends Component{
                     </div>
                 </div>
                 
-                <div className='mv1 fl w-100 '>
-                <Collapsible title="Scheduled Driver" expanded={false} className='mv3 fl w-100 height-ems'>
+                <div className='mv1 fl w-100  '>
+                <Collapsible title="Scheduled Driver" expanded={true} className='mv3 fl w-100 '>
                     <div className='fl w-100'>
-                        <DriverDropper key='SelectedDriver' drivers={getItems(1)}/>
+                        <DriverDropper key='SelectedDriver' selectedDrivers={getItems(1)} drivers={getItems(3)}/>
                     </div>
-                    <div className='fl w-100'>
-                        <DriverDropper key='ListOfDrivers' drivers={getItems(2)} />
-                    </div>
+            
                     
                 </Collapsible>
                 </div>
                 <div className='mv1 fl w-100 '>
-                <Collapsible title="Driver's Scheduled Hours" expanded={false} className='fl w-100 height-ems'>
+                <Collapsible title="Driver's Scheduled Hours" expanded={false} className='fl w-100 '>
                     <div className='fl w-third mh2'>
                         <KeyValueBlock keyName='Start Time' valueName={new Date().toLocaleTimeString()} className='' />
                     </div>

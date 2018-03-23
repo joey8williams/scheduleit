@@ -38,7 +38,7 @@ class Map extends Component{
     }
     render(){
         const style={
-            width:'94vw',
+            width:'95vw',
             height:'29vh'
         }
         return (
