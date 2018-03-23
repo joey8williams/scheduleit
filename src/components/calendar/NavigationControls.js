@@ -28,7 +28,7 @@ class NavigationControls extends Component{
                              onClick={this.backward}/>
                 </div>
                 <div className="fl w-80 tc">
-                    <h2 className="georgia f3 solid moon-gray">{format(this.props.date,"MMMM")}, {format(this.props.date,"YYYY")}</h2>
+                    <h2 className="f3 solid moon-gray">{format(this.props.date,"MMMM")}, {format(this.props.date,"YYYY")}</h2>
                 </div>
                 <div className="fl w-10 mv3">
                 <FontAwesome name="chevron-circle-right"
