@@ -66,7 +66,7 @@ class ScheduleAgenda extends Component{
                 </div>
                 
                 <div className='mv1 fl w-100  '>
-                <Collapsible title="Scheduled Driver" expanded={true} className='mv3 fl w-100 '>
+                <Collapsible title="Scheduled Driver" expanded={false} className='mv3 fl w-100 '>
                     <div className='fl w-100'>
                         <DriverDropper key='SelectedDriver' selectedDrivers={getItems(1)} drivers={getItems(3)}/>
                     </div>
